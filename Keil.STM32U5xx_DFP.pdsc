@@ -4,6 +4,7 @@
   <name>STM32U5xx_DFP</name>
   <description>STMicroelectronics STM32U5 Series Device Support</description>
   <url>https://www.keil.com/pack/</url>
+  <repository type="git">https://github.com/Open-CMSIS-Pack/STM32U5xx_DFP.git</repository>
   <license>LICENSE</license>
   <licenseSets>
     <licenseSet id="all" default="true" gating="true">
