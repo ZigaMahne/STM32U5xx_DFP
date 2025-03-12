@@ -20,7 +20,8 @@
       - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
       - LICENSE-Apache-2.0 (for CMSIS add-ons)
       - LICENSE-BSD-3-Clause (for STM32 HAL)
-      Update debug configuration file (Correct value for ETM Trace Clock pin PE2
+      Update debug configuration file (Correct value for ETM Trace Clock pin PE2)
+      Corrected RCC_AHB2ENR1 address in ConfigureTrace*Pins sequences
     </release>
     <release version="2.2.1" date="2024-02-22">
       STM32CubeMX integration:
@@ -361,7 +362,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
             portAdr = 0x42020000 + secOffs + (port * 0x400);
 
             pos = pin * 2;
-            Write32(0x4002108C + secOffs, ((Read32(0x4002108C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+            Write32(0x46020C8C + secOffs, ((Read32(0x46020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
 
             Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
             Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
@@ -404,7 +405,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
               portAdr = 0x42020000 + secOffs + (port * 0x400);
 
               pos = pin * 2;
-              Write32(0x4002108C + secOffs, ((Read32(0x4002108C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+              Write32(0x46020C8C + secOffs, ((Read32(0x46020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
               Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
               Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
               Write32(portAdr + 0x0C, ((Read32(portAdr + 0x0C) &amp; ~( 3 &lt;&lt; pos))                    ) );  // GPIOx_PUPDR:   Set I/O to no pull-up/pull-down
@@ -436,7 +437,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
               portAdr = 0x42020000 + secOffs + (port * 0x400);
 
               pos = pin * 2;
-              Write32(0x4002108C + secOffs, ((Read32(0x4002108C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+              Write32(0x46020C8C + secOffs, ((Read32(0x46020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
               Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
               Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
               Write32(portAdr + 0x0C, ((Read32(portAdr + 0x0C) &amp; ~( 3 &lt;&lt; pos))                    ) );  // GPIOx_PUPDR:   Set I/O to no pull-up/pull-down
@@ -463,7 +464,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
               portAdr = 0x42020000 + secOffs + (port * 0x400);
 
               pos = pin * 2;
-              Write32(0x4002108C + secOffs, ((Read32(0x4002108C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+              Write32(0x46020C8C + secOffs, ((Read32(0x46020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
               Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
               Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
               Write32(portAdr + 0x0C, ((Read32(portAdr + 0x0C) &amp; ~( 3 &lt;&lt; pos))                    ) );  // GPIOx_PUPDR:   Set I/O to no pull-up/pull-down
@@ -490,7 +491,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
               portAdr = 0x42020000 + secOffs + (port * 0x400);
 
               pos = pin * 2;
-              Write32(0x4002108C + secOffs, ((Read32(0x4002108C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+              Write32(0x46020C8C + secOffs, ((Read32(0x46020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
               Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
               Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
               Write32(portAdr + 0x0C, ((Read32(portAdr + 0x0C) &amp; ~( 3 &lt;&lt; pos))                    ) );  // GPIOx_PUPDR:   Set I/O to no pull-up/pull-down
@@ -515,7 +516,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
               portAdr = 0x42020000 + secOffs + (port * 0x400);
 
               pos = pin * 2;
-              Write32(0x4002108C + secOffs, ((Read32(0x4002108C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+              Write32(0x46020C8C + secOffs, ((Read32(0x46020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
               Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
               Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
               Write32(portAdr + 0x0C, ((Read32(portAdr + 0x0C) &amp; ~( 3 &lt;&lt; pos))                    ) );  // GPIOx_PUPDR:   Set I/O to no pull-up/pull-down
