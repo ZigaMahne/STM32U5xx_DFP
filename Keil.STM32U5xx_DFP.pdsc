@@ -16,6 +16,7 @@
   <releases>
     <release version="3.0.2-dev">
       Active development...
+      Corrected the RAM-size of Flash algorithms to double-word aligned values to avoid errors with Arm Debugger version 6.5.0
       Reorganized Licenses:
       - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
       - LICENSE-Apache-2.0 (for CMSIS add-ons)
@@ -134,7 +135,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
 
       <algorithm name="CMSIS/Flash/MX25LM51245G_STM32U575I-EVAL.FLM"    start="0x70000000" size="0x04000000" RAMstart="0x20000000" RAMsize="0xA0000" default="0" />
       <algorithm name="CMSIS/Flash/MX25LM51245G_STM32U585I_IOT02A.FLM"  start="0x70000000" size="0x04000000" RAMstart="0x20000000" RAMsize="0xA0000" default="0" />
-      <algorithm name="CMSIS/Flash/MX25LM51245G_STM32U599J-DK.FLM"      start="0x90000000" size="0x04000000" RAMstart="0x20000000" RAMsize="0xFFF4"  default="0" />
+      <algorithm name="CMSIS/Flash/MX25LM51245G_STM32U599J-DK.FLM"      start="0x90000000" size="0x04000000" RAMstart="0x20000000" RAMsize="0xFFF0"  default="0" />
 
       <debugvars configfile="CMSIS/Debug/STM32U535_545_575_585_59x_5Ax.dbgconf" version="1.0.0">
         __var DbgMCU_CR       = 0x00000006;   // DBGMCU_CR: DBG_STOP, DBG_STANDBY
