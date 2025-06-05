@@ -16,8 +16,8 @@
   <releases>
     <release version="3.0.3-dev">
       Active development...
-	  - Added support for STM32U5G9J-DK2 HSPI external flash loader
-	  - Updated SVD files
+      - Added support for STM32U5G9J-DK2 HSPI external flash loader
+      - Updated SVD files
       Corrected the RAM-size of Flash algorithms to double-word aligned values to avoid errors with Arm Debugger version 6.5.0
       Reorganized Licenses:
       - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
