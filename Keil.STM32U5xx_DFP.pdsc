@@ -14,8 +14,10 @@
   </licenseSets>
 
   <releases>
-    <release version="3.0.2-dev">
+    <release version="3.0.3-dev">
       Active development...
+      - Added support for STM32U5G9J-DK2 HSPI external flash loader
+      - Updated SVD files
       Corrected the RAM-size of Flash algorithms to double-word aligned values to avoid errors with Arm Debugger version 6.5.0
       Reorganized Licenses:
       - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
@@ -136,6 +138,8 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
       <algorithm name="CMSIS/Flash/MX25LM51245G_STM32U575I-EVAL.FLM"    start="0x70000000" size="0x04000000" RAMstart="0x20000000" RAMsize="0xA0000" default="0" />
       <algorithm name="CMSIS/Flash/MX25LM51245G_STM32U585I_IOT02A.FLM"  start="0x70000000" size="0x04000000" RAMstart="0x20000000" RAMsize="0xA0000" default="0" />
       <algorithm name="CMSIS/Flash/MX25LM51245G_STM32U599J-DK.FLM"      start="0x90000000" size="0x04000000" RAMstart="0x20000000" RAMsize="0xFFF0"  default="0" />
+      <algorithm name="CMSIS/Flash/MX66LM1G45G_STM32U5G9J-DK2.FLM"      start="0xA0000000" size="0x08000000" RAMstart="0x20000000" RAMsize="0xFFF0"  default="0" />
+
 
       <debugvars configfile="CMSIS/Debug/STM32U535_545_575_585_59x_5Ax.dbgconf" version="1.0.0">
         __var DbgMCU_CR       = 0x00000006;   // DBGMCU_CR: DBG_STOP, DBG_STANDBY
@@ -594,7 +598,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
       <!-- ************************  Subfamily 'STM32U5F9'  ************************************ -->
       <subFamily DsubFamily="STM32U5F9">
         <compile define="STM32U5F9xx"/>
-        <debug svd="CMSIS/SVD/STM32U5Fx.svd"/>
+        <debug svd="CMSIS/SVD/STM32U5F9.svd"/>
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf" title="STM32U5Fxxx Datasheet"/>
 
@@ -667,7 +671,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
 
       <!-- ************************  Subfamily 'STM32U5G9'  ************************************* -->
       <subFamily DsubFamily="STM32U5G9">
-        <debug svd="CMSIS/SVD/STM32U5Gx.svd"/>
+        <debug svd="CMSIS/SVD/STM32U5G9.svd"/>
         <compile define="STM32U5G9xx"/>
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf" title="STM32U5Gxxx Datasheet"/>
@@ -721,7 +725,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
       <!-- ************************  Subfamily 'STM32U5F7'  ************************************* -->
       <subFamily DsubFamily="STM32U5F7">
         <compile define="STM32U5F7xx"/>
-        <debug svd="CMSIS/SVD/STM32U5Fx.svd"/>
+        <debug svd="CMSIS/SVD/STM32U5F7.svd"/>
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf" title="STM32U5Fxxx Datasheet"/>
 
@@ -763,7 +767,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
       <!-- ************************  Subfamily 'STM32U5G7'   ************************************* -->
       <subFamily DsubFamily="STM32U5G7">
         <compile define="STM32U5G7xx"/>
-        <debug svd="CMSIS/SVD/STM32U5Gx.svd"/>
+        <debug svd="CMSIS/SVD/STM32U5G7.svd"/>
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf" title="STM32U5Gxxx Datasheet"/>
 
