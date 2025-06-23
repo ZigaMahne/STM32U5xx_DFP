@@ -1,6 +1,6 @@
 # A project translates into one executable or library.
 project:
-  
+
   processor:
     # This project is executed in secure mode.
     trustzone: secure
@@ -10,3 +10,9 @@ project:
   components:
     - component: ARM::CMSIS:CORE
     - component: Device:CubeMX
+
+  output:
+    type:
+      - elf
+      - hex
+      - map
