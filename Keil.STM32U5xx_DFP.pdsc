@@ -14,22 +14,8 @@
   </licenseSets>
 
   <releases>
-    <release version="3.0.4-dev">
+    <release version="3.1.1-dev">
       Active development...
-      Updateed Templates:
-      - Added DWARF-5 debug information
-      - Added generated output files
-      Pack Description:
-      - Updated SVD files
-      - Added support for STM32U5G9J-DK2 HSPI external flash loader
-      - Corrected the RAM-size of Flash algorithms to double-word aligned values to avoid errors with Arm Debugger version 6.5.0
-      - Corrected RCC_AHB2ENR1 address in ConfigureTrace*Pins sequences
-      Updated debug configuration file (Correct value for ETM Trace Clock pin PE2)
-      Updated documentation references
-      Reorganized Licenses:
-      - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
-      - LICENSE-Apache-2.0 (for CMSIS add-ons)
-      - LICENSE-BSD-3-Clause (for STM32 HAL)
     </release>
     <release version="2.2.1" date="2024-02-22">
       STM32CubeMX integration:
