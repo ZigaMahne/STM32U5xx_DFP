@@ -150,6 +150,7 @@ typedef struct
 // Flash option register definitions
 #define FLASH_OPTR_RDP          ((u32)(0xFF      ))
 #define FLASH_OPTR_RDP_NO       ((u32)(0xAA      ))
+#define FLASH_OPTR_SWAP_BANK    ((u32)(  1U << 20))
 #define FLASH_OPTR_DBANK        ((u32)(  1U << 21))
 #define FLASH_OPTR_TZEN         ((u32)(  1U << 31))
 
@@ -231,6 +232,23 @@ static u32 GetFlashBankMode (void) {
 
 
 /*
+ * Get Flash Bank Swap
+ *    Return Value:   0 = not swapped
+ *                    1 = swapped
+ */
+
+#if defined FLASH_MEM
+static u32 GetFlashBankSwap (void) {
+  u32 flashBankSwap;
+
+  flashBankSwap = (FLASH->OPTR & FLASH_OPTR_SWAP_BANK) ? 1U : 0U;
+
+  return (flashBankSwap);
+}
+#endif /* FLASH_MEM */
+
+
+/*
  * Get Flash Bank Number
  *    Parameter:      adr:  Sector Address
  *    Return Value:   Bank Number (0..1)
@@ -254,6 +272,12 @@ static u32 GetFlashBankNum(u32 adr) {
       else
       {
         flashBankNum = 0U;
+      }
+      /* Swap-Bank mode */
+      if (GetFlashBankSwap() == 1U)
+      {
+        /* Swap bank number to reach the correct hardware bank */
+        flashBankNum ^= 1U;
       }
     }
     else
