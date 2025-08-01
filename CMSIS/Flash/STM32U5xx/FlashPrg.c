@@ -1,5 +1,5 @@
 /* -----------------------------------------------------------------------------
- * Copyright (c) 2021 - 2023 ARM Ltd.
+ * Copyright (c) 2021 - 2025 ARM Ltd.
  *
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from
@@ -18,13 +18,15 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  *
- * $Date:        31. October 2023
- * $Revision:    V1.3.0
+ * $Date:        8. August 2025
+ * $Revision:    V1.4.0
  *
  * Project:      Flash Device Description for ST STM32U5xx Flash
  * --------------------------------------------------------------------------- */
 
 /* History:
+ *  Version 1.4.0
+ *    Added SWAP_BANK awareness
  *  Version 1.3.0
  *    Added more algorithms
  *  Version 1.2.0
