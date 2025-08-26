@@ -16,9 +16,11 @@
   <releases>
     <release version="3.1.1-dev">
       Active development...
-
       Devices Support:
       - Updated Flash programming algorithm (select correct bank based on SWAP_BANK bit)
+      - Shortened device family description
+      - Updated debug configuration file (MCU APBx Freeze registers)
+      - Corrected GFXMMU virtual memory default attrubute to false (default="0")
     </release>
     <release version="2.2.1" date="2024-02-22">
       STM32CubeMX integration:
@@ -121,8 +123,7 @@
     <family Dfamily="STM32U5 Series" Dvendor="STMicroelectronics:13">
       <processor Dcore="Cortex-M33" DcoreVersion="r0p0" Dfpu="SP_FPU" Dmpu="MPU" Ddsp="DSP" Dtz="TZ" Dendian="Little-endian" Dclock="160000000"/>
       <description>
-The STM32U5 series offers advanced power-saving microcontrollers, based on Arm® Cortex®-M33 to meet the most demanding power/performance requirements for smart applications, including wearables, personal medical devices, home automation, and industrial sensors.
-Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the STM32U5 series of microcontrollers takes performance to the next level.
+Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240 DMIPS at 160 MHz.
       </description>
 
       <book name="https://developer.arm.com/documentation/100235/latest/"  title="Arm Cortex-M33 Devices"/>
@@ -134,14 +135,14 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
       <algorithm name="CMSIS/Flash/MX66LM1G45G_STM32U5G9J-DK2.FLM"      start="0xA0000000" size="0x08000000" RAMstart="0x20000000" RAMsize="0xFFF0"  default="0" />
 
 
-      <debugvars configfile="CMSIS/Debug/STM32U535_545_575_585_59x_5Ax.dbgconf" version="1.0.0">
+      <debugvars configfile="CMSIS/Debug/STM32U535_545_575_585_59x_5Ax.dbgconf" version="1.0.1">
         __var DbgMCU_CR       = 0x00000006;   // DBGMCU_CR: DBG_STOP, DBG_STANDBY
-        __var DbgMCU_APB1L_Fz = 0x00000000;   // DGBMCU_APB1L_FZ: All Peripherals Operate as in Normal Mode
-        __var DbgMCU_APB1H_Fz = 0x00000000;   // DGBMCU_APB1H_FZ: All Peripherals Operate as in Normal Mode
-        __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ : All Peripherals Operate as in Normal Mode
-        __var DbgMCU_APB3_Fz  = 0x00000000;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
-        __var DbgMCU_AHB1_Fz  = 0x00000000;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
-        __var DbgMCU_AHB3_Fz  = 0x00000000;   // DBGMCU_AHB3FZR : All Peripherals Operate as in Normal Mode
+        __var DbgMCU_APB1L_Fz = 0x0060183F;   // DGBMCU_APB1L_FZ : Configure APB1L peripheral freeze behavior
+        __var DbgMCU_APB1H_Fz = 0x000000E2;   // DGBMCU_APB1H_FZ : Configure APB1H peripheral freeze behavior
+        __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ  : Configure APB2 peripheral freeze behavior
+        __var DbgMCU_APB3_Fz  = 0x000E0400;   // DBGMCU_APB3_FZR : Configure AHB1 peripheral freeze behavior
+        __var DbgMCU_AHB1_Fz  = 0x0000FFFF;   // DBGMCU_AHB1_FZR : Configure AHB1 peripheral freeze behavior
+        __var DbgMCU_AHB3_Fz  = 0x0000000F;   // DBGMCU_AHB3_FZR : Configure AHB3 peripheral freeze behavior
         __var TraceClk_Pin    = 0x00040002;   // PE2 (Note: PA8 uses AF12)
         __var TraceD0_Pin     = 0x00020009;   // PC9
         __var TraceD1_Pin     = 0x0002000A;   // PC10
@@ -596,7 +597,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf" title="STM32U5Fxxx Datasheet"/>
 
         <memory name="SRAM12356"    access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="1" init="0" />
+        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
         <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
 
         <!-- ################################### 4MB ################################## -->
@@ -723,7 +724,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf" title="STM32U5Fxxx Datasheet"/>
 
         <memory name="SRAM12356"    access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="1" init="0" />
+        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
         <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
 
         <!-- ################################### 4MB ################################## -->
@@ -765,7 +766,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf" title="STM32U5Gxxx Datasheet"/>
 
         <memory name="SRAM12356"    access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="1" init="0" />
+        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
         <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
 
         <!-- ################################### 4MB ################################## -->
@@ -792,7 +793,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
         <book name="https://www.st.com/resource/en/datasheet/stm32u595ai.pdf" title="STM32U59xxx Datasheet"/>
 
         <memory name="SRAM1235"     access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="1" init="0" />
+        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
         <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
 
         <!-- ################################### 4MB ################################## -->
@@ -963,7 +964,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf" title="STM32U5Axxx Datasheet"/>
 
         <memory name="SRAM1235"     access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="1" init="0" />
+        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
         <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
 
         <!-- ################################### 4MB ################################## -->
@@ -1052,7 +1053,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
         <book name="https://www.st.com/resource/en/datasheet/stm32u595ai.pdf" title="STM32U59xxx Datasheet"/>
 
         <memory name="SRAM1235"     access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="1" init="0" />
+        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
         <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
 
         <!-- ################################### 4MB ################################## -->
@@ -1141,7 +1142,7 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf" title="STM32U5Axxx Datasheet"/>
 
         <memory name="SRAM1235"     access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="1" init="0" />
+        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
         <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
 
         <!-- ################################### 4MB ################################## -->
