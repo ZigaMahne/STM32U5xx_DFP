@@ -16,6 +16,8 @@
   <releases>
     <release version="3.1.2-dev">
       Active development...
+      Package Description (pdsc):
+      - Updated Flash and SRAM memory names
     </release>
     <release version="2.2.1" date="2024-02-22">
       STM32CubeMX integration:
@@ -591,14 +593,26 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf" title="STM32U5Fxxx Datasheet"/>
 
-        <memory name="SRAM12356"    access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
-        <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM1_NS"      access="rwx" start="0x20000000" size="0x000C0000" default="1" init="0" />
+        <memory name="SRAM1_S"       access="rwx" start="0x30000000" size="0x000C0000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS"      access="rwx" start="0x200C0000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"       access="rwx" start="0x300C0000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM3_NS"      access="rwx" start="0x200D0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM3_S"       access="rwx" start="0x300D0000" size="0x000D0000" alias="SRAM3_NS" />
+        <memory name="SRAM5_NS"      access="rwx" start="0x201A0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM5_S"       access="rwx" start="0x301A0000" size="0x000D0000" alias="SRAM5_NS" />
+        <memory name="SRAM6_NS"      access="rwx" start="0x20270000" size="0x00080000" default="1" init="0" />
+        <memory name="SRAM6_S"       access="rwx" start="0x30270000" size="0x00080000" alias="SRAM6_NS" />
+        <memory name="SRAM_GFXMM_NS" access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
+        <memory name="SRAM_GFXMM_S"  access="rwx" start="0x34000000" size="0x01000000" alias="SRAM_GFXMM_NS" />
+        <memory name="SRAM4_NS"      access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"       access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################### 4MB ################################## -->
         <!-- *************************  Device 'STM32U5F9NJ'   ************************ -->
         <device Dname="STM32U5F9NJHxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="216"/>
@@ -606,7 +620,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5F9BJ'   ************************ -->
         <device Dname="STM32U5F9BJYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="208"/>
@@ -614,13 +629,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5F9ZJ'   ************************ -->
         <device Dname="STM32U5F9ZJJxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="144"/>
         </device>
         <device Dname="STM32U5F9ZJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
@@ -628,7 +645,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5F9VJ'   ************************ -->
         <device Dname="STM32U5F9VJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -637,13 +655,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
         <!-- ################################### 2MB ################################################ -->
         <!-- *************************  Device 'STM32U5F9ZI'   ***************************** -->
         <device Dname="STM32U5F9ZIJxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="144"/>
         </device>
         <device Dname="STM32U5F9ZITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
@@ -651,7 +671,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5F9VI'   ***************************** -->
         <device Dname="STM32U5F9VITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -665,14 +686,26 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf" title="STM32U5Gxxx Datasheet"/>
 
-        <memory name="SRAM12356"    access="rwx" start="0x20000000"  size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000"  size="0x01000000" default="0" init="0" />
-        <memory name="SRAM4"        access="rwx" start="0x28000000"  size="0x00004000" default="1" init="0" />
+        <memory name="SRAM1_NS"      access="rwx" start="0x20000000" size="0x000C0000" default="1" init="0" />
+        <memory name="SRAM1_S"       access="rwx" start="0x30000000" size="0x000C0000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS"      access="rwx" start="0x200C0000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"       access="rwx" start="0x300C0000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM3_NS"      access="rwx" start="0x200D0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM3_S"       access="rwx" start="0x300D0000" size="0x000D0000" alias="SRAM3_NS" />
+        <memory name="SRAM5_NS"      access="rwx" start="0x201A0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM5_S"       access="rwx" start="0x301A0000" size="0x000D0000" alias="SRAM5_NS" />
+        <memory name="SRAM6_NS"      access="rwx" start="0x20270000" size="0x00080000" default="1" init="0" />
+        <memory name="SRAM6_S"       access="rwx" start="0x30270000" size="0x00080000" alias="SRAM6_NS" />
+        <memory name="SRAM_GFXMM_NS" access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
+        <memory name="SRAM_GFXMM_S"  access="rwx" start="0x34000000" size="0x01000000" alias="SRAM_GFXMM_NS" />
+        <memory name="SRAM4_NS"      access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"       access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################### 4MB ################################## -->
         <!-- *************************  Device 'STM32U5G9NJ'   ************************ -->
         <device Dname="STM32U5G9NJHxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="216"/>
@@ -680,7 +713,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5G9BJ'   ***************************** -->
         <device Dname="STM32U5G9BJYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="208"/>
@@ -688,7 +722,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5G9JJ'   ***************************** -->
         <device Dname="STM32U5G9ZJJxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="144"/>
@@ -696,7 +731,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5G9ZJ'   ***************************** -->
         <device Dname="STM32U5G9ZJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
@@ -704,7 +740,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5G9VJ'   ***************************** -->
         <device Dname="STM32U5G9VJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -718,20 +755,33 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf" title="STM32U5Fxxx Datasheet"/>
 
-        <memory name="SRAM12356"    access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
-        <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM1_NS"      access="rwx" start="0x20000000" size="0x000C0000" default="1" init="0" />
+        <memory name="SRAM1_S"       access="rwx" start="0x30000000" size="0x000C0000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS"      access="rwx" start="0x200C0000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"       access="rwx" start="0x300C0000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM3_NS"      access="rwx" start="0x200D0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM3_S"       access="rwx" start="0x300D0000" size="0x000D0000" alias="SRAM3_NS" />
+        <memory name="SRAM5_NS"      access="rwx" start="0x201A0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM5_S"       access="rwx" start="0x301A0000" size="0x000D0000" alias="SRAM5_NS" />
+        <memory name="SRAM6_NS"      access="rwx" start="0x20270000" size="0x00080000" default="1" init="0" />
+        <memory name="SRAM6_S"       access="rwx" start="0x30270000" size="0x00080000" alias="SRAM6_NS" />
+        <memory name="SRAM_GFXMM_NS" access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
+        <memory name="SRAM_GFXMM_S"  access="rwx" start="0x34000000" size="0x01000000" alias="SRAM_GFXMM_NS" />
+        <memory name="SRAM4_NS"      access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"       access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################### 4MB ################################## -->
         <!-- *************************  Device 'STM32U5F7VJ'   ************************ -->
         <device Dname="STM32U5F7VJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U5F7VJTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -740,13 +790,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
         <!-- ################################### 2MB ################################## -->
         <!-- *************************  Device 'STM32U5F7VI'   ************************ -->
         <device Dname="STM32U5F7VITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U5F7VITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -760,20 +812,33 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf" title="STM32U5Gxxx Datasheet"/>
 
-        <memory name="SRAM12356"    access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
-        <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM1_NS"      access="rwx" start="0x20000000" size="0x000C0000" default="1" init="0" />
+        <memory name="SRAM1_S"       access="rwx" start="0x30000000" size="0x000C0000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS"      access="rwx" start="0x200C0000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"       access="rwx" start="0x300C0000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM3_NS"      access="rwx" start="0x200D0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM3_S"       access="rwx" start="0x300D0000" size="0x000D0000" alias="SRAM3_NS" />
+        <memory name="SRAM5_NS"      access="rwx" start="0x201A0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM5_S"       access="rwx" start="0x301A0000" size="0x000D0000" alias="SRAM5_NS" />
+        <memory name="SRAM6_NS"      access="rwx" start="0x20270000" size="0x00080000" default="1" init="0" />
+        <memory name="SRAM6_S"       access="rwx" start="0x30270000" size="0x00080000" alias="SRAM6_NS" />
+        <memory name="SRAM_GFXMM_NS" access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
+        <memory name="SRAM_GFXMM_S"  access="rwx" start="0x34000000" size="0x01000000" alias="SRAM_GFXMM_NS" />
+        <memory name="SRAM4_NS"      access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"       access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################### 4MB ################################## -->
         <!-- *************************  Device 'STM32U5G7VJ'   ************************ -->
         <device Dname="STM32U5G7VJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U5G7VJTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5Fx_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -787,20 +852,31 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u595ai.pdf" title="STM32U59xxx Datasheet"/>
 
-        <memory name="SRAM1235"     access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
-        <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM1_NS"      access="rwx" start="0x20000000" size="0x000C0000" default="1" init="0" />
+        <memory name="SRAM1_S"       access="rwx" start="0x30000000" size="0x000C0000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS"      access="rwx" start="0x200C0000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"       access="rwx" start="0x300C0000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM3_NS"      access="rwx" start="0x200D0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM3_S"       access="rwx" start="0x300D0000" size="0x000D0000" alias="SRAM3_NS" />
+        <memory name="SRAM5_NS"      access="rwx" start="0x201A0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM5_S"       access="rwx" start="0x301A0000" size="0x000D0000" alias="SRAM5_NS" />
+        <memory name="SRAM_GFXMM_NS" access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
+        <memory name="SRAM_GFXMM_S"  access="rwx" start="0x34000000" size="0x01000000" alias="SRAM_GFXMM_NS" />
+        <memory name="SRAM4_NS"      access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"       access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################### 4MB ################################## -->
         <!-- *************************  Device 'STM32U595AJ'  ************************* -->
         <device Dname="STM32U595AJHx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
         </device>
         <device Dname="STM32U595AJHxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
@@ -808,32 +884,37 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U595ZJ'  ************************* -->
         <device Dname="STM32U595ZJTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
         <device Dname="STM32U595ZJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
         <device Dname="STM32U595ZJYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="150"/>
         </device>
         <!-- *************************  Device 'STM32U595QJ'  ************************* -->
         <device Dname="STM32U595QJIx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
         </device>
         <device Dname="STM32U595QJIxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
@@ -841,13 +922,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U595VJ'  ************************* -->
         <device Dname="STM32U595VJTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U595VJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -855,13 +938,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U595RJ'  ************************* -->
         <device Dname="STM32U595RJTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U595RJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
@@ -870,13 +955,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
         <!-- ################################### 2MB ################################## -->
         <!-- *************************  Device 'STM32U595AI'  ************************* -->
         <device Dname="STM32U595AIHx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
         </device>
         <device Dname="STM32U595AIHxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
@@ -884,25 +971,29 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U595ZI'  ************************* -->
         <device Dname="STM32U595ZITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
         <device Dname="STM32U595ZITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
         <device Dname="STM32U595ZIYx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="150"/>
         </device>
         <device Dname="STM32U595ZIYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="150"/>
@@ -910,13 +1001,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U595QI'  ************************* -->
         <device Dname="STM32U595QIIx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
         </device>
         <device Dname="STM32U595QIIxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
@@ -924,13 +1017,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U595VI'  ************************* -->
         <device Dname="STM32U595VITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U595VITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -938,13 +1033,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U595RI'  ************************* -->
         <device Dname="STM32U595RITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U595RITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
@@ -958,20 +1055,31 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf" title="STM32U5Axxx Datasheet"/>
 
-        <memory name="SRAM1235"     access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
-        <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM1_NS"      access="rwx" start="0x20000000" size="0x000C0000" default="1" init="0" />
+        <memory name="SRAM1_S"       access="rwx" start="0x30000000" size="0x000C0000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS"      access="rwx" start="0x200C0000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"       access="rwx" start="0x300C0000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM3_NS"      access="rwx" start="0x200D0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM3_S"       access="rwx" start="0x300D0000" size="0x000D0000" alias="SRAM3_NS" />
+        <memory name="SRAM5_NS"      access="rwx" start="0x201A0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM5_S"       access="rwx" start="0x301A0000" size="0x000D0000" alias="SRAM5_NS" />
+        <memory name="SRAM_GFXMM_NS" access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
+        <memory name="SRAM_GFXMM_S"  access="rwx" start="0x34000000" size="0x01000000" alias="SRAM_GFXMM_NS" />
+        <memory name="SRAM4_NS"      access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"       access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################### 4MB ################################## -->
         <!-- *************************  Device 'STM32U5A5AJ'  ************************* -->
         <device Dname="STM32U5A5AJHx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
         </device>
         <device Dname="STM32U5A5AJHxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
@@ -979,19 +1087,22 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5A5ZJ'  ************************* -->
         <device Dname="STM32U5A5ZJTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
         <device Dname="STM32U5A5ZJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
         <device Dname="STM32U5A5ZJYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="150"/>
@@ -999,13 +1110,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- ************************* Device 'STM32U5A5QJ' *************************** -->
         <device Dname="STM32U5A5QJIx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
         </device>
         <device Dname="STM32U5A5QJIxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
@@ -1013,13 +1126,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5A5VJ'  ************************* -->
         <device Dname="STM32U5A5VJTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U5A5VJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -1027,13 +1142,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5A5RJ'  ************************* -->
         <device Dname="STM32U5A5RJTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U5A5RJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
@@ -1047,14 +1164,24 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u595ai.pdf" title="STM32U59xxx Datasheet"/>
 
-        <memory name="SRAM1235"     access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
-        <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM1_NS"      access="rwx" start="0x20000000" size="0x000C0000" default="1" init="0" />
+        <memory name="SRAM1_S"       access="rwx" start="0x30000000" size="0x000C0000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS"      access="rwx" start="0x200C0000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"       access="rwx" start="0x300C0000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM3_NS"      access="rwx" start="0x200D0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM3_S"       access="rwx" start="0x300D0000" size="0x000D0000" alias="SRAM3_NS" />
+        <memory name="SRAM5_NS"      access="rwx" start="0x201A0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM5_S"       access="rwx" start="0x301A0000" size="0x000D0000" alias="SRAM5_NS" />
+        <memory name="SRAM_GFXMM_NS" access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
+        <memory name="SRAM_GFXMM_S"  access="rwx" start="0x34000000" size="0x01000000" alias="SRAM_GFXMM_NS" />
+        <memory name="SRAM4_NS"      access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"       access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################### 4MB ################################## -->
         <!-- *************************  Device 'STM32U599BJ'  ************************* -->
         <device Dname="STM32U599BJYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="208"/>
@@ -1062,7 +1189,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U599NJ'  ************************* -->
         <device Dname="STM32U599NJHxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="216"/>
@@ -1070,13 +1198,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U599VJ'  ************************* -->
         <device Dname="STM32U599VJTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U599VJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -1084,14 +1214,16 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U599ZJ'  ************************* -->
         <device Dname="STM32U599ZJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
 
         <device Dname="STM32U599ZJYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="150"/>
@@ -1100,7 +1232,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
         <!-- ################################### 2MB ################################## -->
         <!-- *************************  Device 'STM32U599NI'  ************************* -->
         <device Dname="STM32U599NIHxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="216"/>
@@ -1108,13 +1241,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U599ZI'  ************************* -->
         <device Dname="STM32U599ZIYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="150"/>
         </device>
         <device Dname="STM32U599ZITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
@@ -1122,7 +1257,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U599VI'  ************************* -->
         <device Dname="STM32U599VITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -1136,14 +1272,24 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf" title="STM32U5Axxx Datasheet"/>
 
-        <memory name="SRAM1235"     access="rwx" start="0x20000000" size="0x00270000" default="1" init="0" />
-        <memory name="SRAM_GFXMM"   access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
-        <memory name="SRAM4"        access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM1_NS"      access="rwx" start="0x20000000" size="0x000C0000" default="1" init="0" />
+        <memory name="SRAM1_S"       access="rwx" start="0x30000000" size="0x000C0000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS"      access="rwx" start="0x200C0000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"       access="rwx" start="0x300C0000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM3_NS"      access="rwx" start="0x200D0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM3_S"       access="rwx" start="0x300D0000" size="0x000D0000" alias="SRAM3_NS" />
+        <memory name="SRAM5_NS"      access="rwx" start="0x201A0000" size="0x000D0000" default="1" init="0" />
+        <memory name="SRAM5_S"       access="rwx" start="0x301A0000" size="0x000D0000" alias="SRAM5_NS" />
+        <memory name="SRAM_GFXMM_NS" access="rwx" start="0x24000000" size="0x01000000" default="0" init="0" />
+        <memory name="SRAM_GFXMM_S"  access="rwx" start="0x34000000" size="0x01000000" alias="SRAM_GFXMM_NS" />
+        <memory name="SRAM4_NS"      access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"       access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################### 4MB ################################## -->
         <!-- *************************  Device 'STM32U5A9NJ'  ************************* -->
         <device Dname="STM32U5A9NJHxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="216"/>
@@ -1151,7 +1297,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5A9BJ'  ************************* -->
         <device Dname="STM32U5A9BJYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="208"/>
@@ -1159,13 +1306,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5A9ZJ'  ************************* -->
         <device Dname="STM32U5A9ZJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
         <device Dname="STM32U5A9ZJYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="150"/>
@@ -1173,7 +1322,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U5A9VJ'  ************************* -->
         <device Dname="STM32U5A9VJTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00400000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00400000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0800.FLM" start="0x08000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U59x_4M_0C00.FLM" start="0x0C000000" size="0x00400000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -1187,19 +1337,27 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u575ag.pdf" title="STM32U575xx Datasheet"/>
 
-        <memory name="SRAM1_2" access="rwx" start="0x20000000" size="0x00040000" default="1" init="0" />
-        <memory name="SRAM3"   access="rwx" start="0x20040000" size="0x00080000" default="0" init="0" />
+        <memory name="SRAM1_NS" access="rwx" start="0x20000000" size="0x00030000" default="1" init="0" />
+        <memory name="SRAM1_S"  access="rwx" start="0x30000000" size="0x00030000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS" access="rwx" start="0x20030000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"  access="rwx" start="0x30030000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM3_NS" access="rwx" start="0x20040000" size="0x00080000" default="1" init="0" />
+        <memory name="SRAM3_S"  access="rwx" start="0x30040000" size="0x00080000" alias="SRAM3_NS" />
+        <memory name="SRAM4_NS" access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"  access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################### 2MB ################################## -->
         <!-- *************************  Device 'STM32U575ZI'  ************************* -->
         <device Dname="STM32U575ZITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
         <device Dname="STM32U575ZITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
@@ -1207,13 +1365,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575QI'  ************************* -->
         <device Dname="STM32U575QIIx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
         </device>
         <device Dname="STM32U575QIIxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
@@ -1221,13 +1381,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575VI'  ************************* -->
         <device Dname="STM32U575VITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U575VITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -1235,13 +1397,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575RI'  ************************* -->
         <device Dname="STM32U575RITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U575RITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
@@ -1249,25 +1413,29 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575CI'  ************************* -->
         <device Dname="STM32U575CITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U575CITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U575CIUx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U575CIUxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
@@ -1275,13 +1443,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575AI'  ************************* -->
         <device Dname="STM32U575AIIx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
         </device>
         <device Dname="STM32U575AIIxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
@@ -1289,7 +1459,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575OI'  ************************* -->
         <device Dname="STM32U575OIYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="90"/>
@@ -1298,25 +1469,29 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
         <!-- ################################### 1MB ################################## -->
         <!-- *************************  Device 'STM32U575CG'  ************************* -->
         <device Dname="STM32U575CGUx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U575CGUxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U575CGTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U575CGTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
@@ -1324,13 +1499,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575RG'  ************************* -->
         <device Dname="STM32U575RGTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U575RGTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
@@ -1338,13 +1515,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575VG'  ************************* -->
         <device Dname="STM32U575VGTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U575VGTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -1352,13 +1531,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575ZG'  ************************* -->
         <device Dname="STM32U575ZGTx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
         <device Dname="STM32U575ZGTxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
@@ -1366,13 +1547,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575QG'  ************************* -->
         <device Dname="STM32U575QGIx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx"  start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx"  start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
         </device>
         <device Dname="STM32U575QGIxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
@@ -1380,13 +1563,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575AG'  ************************* -->
         <device Dname="STM32U575AGIx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
         </device>
         <device Dname="STM32U575AGIxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
@@ -1394,7 +1579,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U575OG'  ************************* -->
         <device Dname="STM32U575OGYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00100000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00100000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0800.FLM" start="0x08000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_1M_0C00.FLM" start="0x0C000000" size="0x00100000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="90"/>
@@ -1409,19 +1595,27 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u585ai.pdf" title="STM32U585xx Datasheet"/>
 
-        <memory name="SRAM1_2" access="rwx" start="0x20000000" size="0x00040000" default="1" init="0" />
-        <memory name="SRAM3"   access="rwx" start="0x20040000" size="0x00080000" default="0" init="0" />
+        <memory name="SRAM1_NS" access="rwx" start="0x20000000"  size="0x00030000" default="1" init="0" />
+        <memory name="SRAM1_S"  access="rwx" start="0x30000000"  size="0x00030000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS" access="rwx" start="0x20030000"  size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"  access="rwx" start="0x30030000"  size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM3_NS" access="rwx" start="0x20040000"  size="0x00080000" default="1" init="0" />
+        <memory name="SRAM3_S"  access="rwx" start="0x30040000"  size="0x00080000" alias="SRAM3_NS" />
+        <memory name="SRAM4_NS" access="rwx" start="0x28000000"  size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"  access="rwx" start="0x38000000"  size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################### 2MB ################################## -->
         <!-- *************************  Device 'STM32U585ZI'  ************************* -->
         <device Dname="STM32U585ZITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
         </device>
         <device Dname="STM32U585ZITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="144"/>
@@ -1429,13 +1623,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U585QI'  ************************* -->
         <device Dname="STM32U585QIIx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
         </device>
         <device Dname="STM32U585QIIxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="132"/>
@@ -1443,13 +1639,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U585VI'  ************************* -->
         <device Dname="STM32U585VITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U585VITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
@@ -1457,13 +1655,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U585RI'  ************************* -->
         <device Dname="STM32U585RITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U585RITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
@@ -1471,25 +1671,29 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U585CI'  ************************* -->
         <device Dname="STM32U585CITx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U585CITxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U585CIUx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U585CIUxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
@@ -1497,13 +1701,15 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U585AI'  ************************* -->
         <device Dname="STM32U585AIIx">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
         </device>
         <device Dname="STM32U585AIIxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="169"/>
@@ -1511,7 +1717,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U585OI'  ************************* -->
         <device Dname="STM32U585OIYxQ">
-          <memory name="Flash"  access="rx"                   start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00200000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00200000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0800.FLM" start="0x08000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_2M_0C00.FLM" start="0x0C000000" size="0x00200000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="90"/>
@@ -1526,31 +1733,39 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u535cb.pdf" title="STM32U535xx Datasheet"/>
 
-        <memory name="SRAM12"  access="rwx" start="0x20000000" size="0x00040000" default="1" init="0" />
-        <memory name="SRAM3"   access="rwx" start="0x28000000" size="0x00004000" default="0" init="0" />
+        <memory name="SRAM1_NS" access="rwx" start="0x20000000" size="0x00030000" default="1" init="0" />
+        <memory name="SRAM1_S"  access="rwx" start="0x30000000" size="0x00030000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS" access="rwx" start="0x20030000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"  access="rwx" start="0x30030000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM4_NS" access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"  access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################## 512KB ################################# -->
         <!-- *************************  Device 'STM32U535CE'  ************************* -->
         <device Dname="STM32U535CETx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U535CETxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U535CEUx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U535CEUxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
@@ -1558,25 +1773,29 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U535RE'  ************************* -->
         <device Dname="STM32U535RETx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U535RETxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U535REIx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="64"/>
         </device>
         <device Dname="STM32U535REIxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="64"/>
@@ -1584,25 +1803,29 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U535VE'  ************************* -->
         <device Dname="STM32U535VETx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U535VETxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U535VEIx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
         </device>
         <device Dname="STM32U535VEIxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
@@ -1610,7 +1833,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U535NEYxQ'  ********************** -->
         <device Dname="STM32U535NEYxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="56"/>
@@ -1618,7 +1842,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U535JEYxQ'  ********************** -->
         <device Dname="STM32U535JEYxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="72"/>
@@ -1627,26 +1852,30 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
         <!-- ################################## 256KB ################################# -->
         <!-- *************************  Device 'STM32U535CC'  ************************* -->
         <device Dname="STM32U535CCTx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U535CCTxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
 
         <device Dname="STM32U535CCUx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U535CCUxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
@@ -1654,25 +1883,29 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U535RC'  ************************* -->
         <device Dname="STM32U535RCTx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U535RCTxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U535RCIx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="64"/>
         </device>
         <device Dname="STM32U535RCIxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="64"/>
@@ -1680,26 +1913,30 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U535VC'  ************************* -->
         <device Dname="STM32U535VCTx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U535VCTxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
 
         <device Dname="STM32U535VCIx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
         </device>
         <device Dname="STM32U535VCIxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
@@ -1707,7 +1944,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U535NCYxQ'  ********************** -->
         <device Dname="STM32U535NCYxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00040000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00040000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_256K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="56"/>
@@ -1716,26 +1954,30 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
         <!-- ################################## 128KB ################################# -->
         <!-- *************************  Device 'STM32U535CB'  ************************* -->
         <device Dname="STM32U535CBTx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00020000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0800.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0C00.FLM" start="0x0C000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U535CBTxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00020000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0800.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0C00.FLM" start="0x0C000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
 
         <device Dname="STM32U535CBUx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00020000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0800.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0C00.FLM" start="0x0C000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U535CBUxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00020000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0800.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0C00.FLM" start="0x0C000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
@@ -1743,25 +1985,29 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U535RB'  ************************* -->
         <device Dname="STM32U535RBTx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00020000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0800.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0C00.FLM" start="0x0C000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U535RBTxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00020000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0800.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0C00.FLM" start="0x0C000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U535RBIx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00020000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0800.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0C00.FLM" start="0x0C000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="64"/>
         </device>
         <device Dname="STM32U535RBIxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00020000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00020000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0800.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_128K_0C00.FLM" start="0x0C000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="64"/>
@@ -1775,31 +2021,39 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <book name="https://www.st.com/resource/en/datasheet/stm32u545ce.pdf" title="STM32U545xx Datasheet"/>
 
-        <memory name="SRAM1_2" access="rwx" start="0x20000000" size="0x00040000" default="1" init="0" />
-        <memory name="SRAM3"   access="rwx" start="0x28000000" size="0x00004000" default="0" init="0" />
+        <memory name="SRAM1_NS" access="rwx" start="0x20000000" size="0x00030000" default="1" init="0" />
+        <memory name="SRAM1_S"  access="rwx" start="0x30000000" size="0x00030000" alias="SRAM1_NS" />
+        <memory name="SRAM2_NS" access="rwx" start="0x20030000" size="0x00010000" default="1" init="0" />
+        <memory name="SRAM2_S"  access="rwx" start="0x30030000" size="0x00010000" alias="SRAM2_NS" />
+        <memory name="SRAM4_NS" access="rwx" start="0x28000000" size="0x00004000" default="1" init="0" />
+        <memory name="SRAM4_S"  access="rwx" start="0x38000000" size="0x00004000" alias="SRAM4_NS" />
 
         <!-- ################################## 512 KB ################################ -->
         <!-- *************************  Device 'STM32U545CE'  ************************* -->
         <device Dname="STM32U545CETx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U545CETxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U545CEUx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
         <device Dname="STM32U545CEUxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
@@ -1807,25 +2061,29 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U545RE'  ************************* -->
         <device Dname="STM32U545RETx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U545RETxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
         <device Dname="STM32U545REIx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="64"/>
         </device>
         <device Dname="STM32U545REIxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="64"/>
@@ -1833,25 +2091,29 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U545VE'  ************************* -->
         <device Dname="STM32U545VETx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U545VETxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32U545VEIx">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
         </device>
         <device Dname="STM32U545VEIxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
@@ -1859,7 +2121,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U545NEYxQ'  ********************** -->
         <device Dname="STM32U545NEYxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="56"/>
@@ -1867,7 +2130,8 @@ Ultra-low-power STM32U5 MCUs with Arm Cortex-M33 core, MPU, cache, DSP, FPU, 240
 
         <!-- *************************  Device 'STM32U545JEYxQ'  ********************** -->
         <device Dname="STM32U545JEYxQ">
-          <memory name="Flash"  access="rx"                     start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_NS" access="rx" start="0x08000000" size="0x00080000" default="1" startup="1" />
+          <memory name="Flash_S"  access="rx" start="0x0C000000" size="0x00080000" alias="Flash_NS" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0800.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <algorithm name="CMSIS/Flash/STM32U5xx_512K_0C00.FLM" start="0x0C000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="72"/>
